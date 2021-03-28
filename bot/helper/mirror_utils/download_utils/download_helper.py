@@ -45,6 +45,10 @@ class DownloadHelper:
     def SetMainFolder(self, folder_name, link):
         self.MainFolderName = folder_name
         self.MainFolderLink = link
+    
+    def SetDestinationFolder(self, folder_name, link):
+        self.DestinationFolderName = folder_name
+        self.DestinationFolderLink = link
 
     def add_download(self, link: str, path):
         raise MethodNotImplementedError
