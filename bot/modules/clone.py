@@ -25,15 +25,7 @@ def cloneNode(update,context):
             ignoreList = args[-1].split(',')
         except IndexError:
             ignoreList = []
-
-        DESTINATION_ID = GDRIVE_FOLDER_ID
-        try:
-            DESTINATION_ID = args[2]
-            print(DESTINATION_ID)
-        except IndexError:
-            pass
-            # Usage: /clone <FolderToClone> <Destination> <IDtoIgnoreFromClone>,<IDtoIgnoreFromClone>
-            
+                  
         msg = sendMessage(f"<b>Cloning:</b> <code>{link}</code>", context.bot, update)
         status_class = DownloadHelper()
         gd = GoogleDriveHelper()
