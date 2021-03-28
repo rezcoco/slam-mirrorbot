@@ -21,7 +21,7 @@ def cloneNode(update,context):
             cc = f'\n\ncc: {uname}'
     if len(args) > 1:
         link = args[1]
-         try:
+        try:
             ignoreList = args[-1].split(',')
         except IndexError:
             ignoreList = []
