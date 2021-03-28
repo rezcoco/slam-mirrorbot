@@ -1,5 +1,6 @@
 # An abstract class which will be inherited by the tool specific classes like aria2_helper or mega_download_helper
 import threading
+from bot.helper.ext_utils.bot_utils import get_readable_file_size
 
 
 class MethodNotImplementedError(NotImplementedError):
@@ -18,6 +19,32 @@ class DownloadHelper:
         self.eta = 0  # Estimated time of download complete
         self.eta_string = '0s'  # A listener class which have event callbacks
         self._resource_lock = threading.Lock()
+        self.status = False
+        self.checking = False
+        self.MainFolderName = ''
+        self.MainFolderLink = ''
+        
+    def get_size(self):
+        return get_readable_file_size(int(self.size))
+    
+    def get_name(self):
+        return self.name
+    
+    def set_status(self, stat):
+        self.status = stat
+    
+    def done(self):
+        return self.status
+
+    def checkFileExist(self, checking=False):
+        self.checking = checking
+
+    def checkFileStatus(self):
+        return self.checking
+    
+    def SetMainFolder(self, folder_name, link):
+        self.MainFolderName = folder_name
+        self.MainFolderLink = link
 
     def add_download(self, link: str, path):
         raise MethodNotImplementedError
