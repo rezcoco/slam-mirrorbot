@@ -27,7 +27,6 @@ class DownloadHelper:
         self.DestinationFolderName = ''
         self.DestinationFolderLink = ''
 
-
     def get_size(self):
         return get_readable_file_size(int(self.size))
     
