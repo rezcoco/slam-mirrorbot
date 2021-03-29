@@ -10,7 +10,7 @@ from bot import dispatcher
 import time
 
 
-@new_thread
+@run_async
 def cloneNode(update,context):
     args = update.message.text.split(" ",maxsplit=1)
     if update.message.from_user.username:
