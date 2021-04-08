@@ -6,7 +6,6 @@ from bot.helper.telegram_helper.message_utils import *
 from bot.helper.telegram_helper.filters import CustomFilters
 from bot.helper.telegram_helper.bot_commands import BotCommands
 from bot.helper.ext_utils.bot_utils import new_thread
-from telegram.error import TimedOut, BadRequest
 from bot import dispatcher, updater, bot
 import time
 
