@@ -175,7 +175,7 @@ def anime(update: Update, context: CallbackContext):
         if trailer:
             buttons = [
                 [InlineKeyboardButton("More Info", url=info),
-                InlineKeyboardButton("Trailer 🎬", url=trailer)]
+                InlineKeyboardButton("Trailer ðŸŽ¬", url=trailer)]
                 ]
         else:
             buttons = [
@@ -185,7 +185,7 @@ def anime(update: Update, context: CallbackContext):
             try:
                 update.effective_message.reply_photo(photo = image, caption = msg, parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(buttons))
             except:
-                msg += f" [〽️]({image})"
+                msg += f" [ã€½ï¸]({image})"
                 update.effective_message.reply_text(msg, parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(buttons))
         else: 
             update.effective_message.reply_text(msg, parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(buttons))
@@ -245,18 +245,18 @@ def manga(update: Update, _):
             try:
                 update.effective_message.reply_photo(photo = image, caption = msg, parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(buttons))
             except:
-                msg += f" [〽️]({image})"
+                msg += f" [ã€½ï¸]({image})"
                 update.effective_message.reply_text(msg, parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(buttons))
         else: update.effective_message.reply_text(msg, parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(buttons))
 
 @run_async
 def weebhelp(update, context):
     help_string = '''
-• `/al`*:* search anime
-• `/chr`*:* search character
-• `/mng`*:* search manga
+â€¢ /al <i>[search anime]</i>
+â€¢ /chr <i>[search character]</i>
+â€¢ /mng <i>[search manga]</i>
 '''
-    update.effective_message.reply_photo("https://telegra.ph/file/db03910496f06094f1f7a.jpg", help_string, parse_mode=ParseMode.MARKDOWN)
+    update.effective_message.reply_text(help_string, parse_mode=ParseMode.HTML)
 
 
 ANIME_HANDLER = CommandHandler("al", anime)
