@@ -406,7 +406,7 @@ class GoogleDriveHelper:
            retry=retry_if_exception_type(HttpError), before=before_log(LOGGER, logging.DEBUG))
     def create_directory(self, directory_name, parent_id):
         file_metadata = {
-            "name": directory_name,
+            "name": directory_name.encode('utf-8'),
             "mimeType": self.__G_DRIVE_DIR_MIME_TYPE
         }
         if parent_id is not None:
