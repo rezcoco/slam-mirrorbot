@@ -409,10 +409,10 @@ class GoogleDriveHelper:
             "name": directory_name,
             "mimeType": self.__G_DRIVE_DIR_MIME_TYPE
         }
-        file_metadata.name.encode('utf-8')
         if parent_id is not None:
             file_metadata["parents"] = [parent_id]
         file = self.__service.files().create(supportsTeamDrives=True, body=file_metadata).execute()
+        file = file.encode('utf-8')
         file_id = file.get("id")
         if not IS_TEAM_DRIVE:
             self.__set_permission(file_id)
