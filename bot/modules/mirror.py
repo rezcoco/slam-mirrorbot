@@ -20,7 +20,6 @@ from bot.helper.telegram_helper.bot_commands import BotCommands
 from bot.helper.telegram_helper.filters import CustomFilters
 from bot.helper.telegram_helper.message_utils import *
 from bot.helper.telegram_helper import button_build
-from base64 import b64encode
 import pathlib
 import os
 import subprocess
@@ -58,7 +57,6 @@ class MirrorListener(listeners.MirrorListeners):
             LOGGER.info(f"Download completed: {download_dict[self.uid].name()}")
             download = download_dict[self.uid]
             name = download.name()
-            name = name.encode('utf-8')
             size = download.size_raw()
             m_path = f'{DOWNLOAD_DIR}{self.uid}/{download.name()}'
         if self.isTar:
