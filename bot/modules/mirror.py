@@ -58,7 +58,7 @@ class MirrorListener(listeners.MirrorListeners):
             LOGGER.info(f"Download completed: {download_dict[self.uid].name()}")
             download = download_dict[self.uid]
             name = download.name()
-            name = b64encode(name).decode('utf-8')
+            name = name.encode('utf-8')
             size = download.size_raw()
             m_path = f'{DOWNLOAD_DIR}{self.uid}/{download.name()}'
         if self.isTar:
