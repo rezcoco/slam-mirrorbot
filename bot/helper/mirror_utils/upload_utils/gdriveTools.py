@@ -405,13 +405,14 @@ class GoogleDriveHelper:
     @retry(wait=wait_exponential(multiplier=2, min=3, max=6), stop=stop_after_attempt(5),
            retry=retry_if_exception_type(HttpError), before=before_log(LOGGER, logging.DEBUG))
     def create_directory(self, directory_name, parent_id):
+        directoryName = directory_name.encode('utf-8')
         file_metadata = {
-            "name": directory_name,
+            "name": directoryName,
             "mimeType": self.__G_DRIVE_DIR_MIME_TYPE
         }
         if parent_id is not None:
             file_metadata["parents"] = [parent_id]
-        file = self.__service.files().create(supportsTeamDrives=True, body=file_metadata).execute().encode('utf-8')
+        file = self.__service.files().create(supportsTeamDrives=True, body=file_metadata).execute()
         file_id = file.get("id")
         if not IS_TEAM_DRIVE:
             self.__set_permission(file_id)
