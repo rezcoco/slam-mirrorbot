@@ -415,7 +415,7 @@ class GoogleDriveHelper:
         file_id = file.get("id")
         if not IS_TEAM_DRIVE:
             self.__set_permission(file_id)
-        LOGGER.info("Created Google-Drive Folder:\nName: {}\nID: {} ".format(file.get("name").decode('utf-8'), file_id))
+        LOGGER.info("Created Google-Drive Folder:\nName: {}\nID: {} ".format(file.get("name".encode('utf-8')), file_id))
         return file_id
 
     def upload_dir(self, input_directory, parent_id):
