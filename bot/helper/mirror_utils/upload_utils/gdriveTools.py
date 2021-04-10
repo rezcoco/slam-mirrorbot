@@ -411,7 +411,7 @@ class GoogleDriveHelper:
         }
         if parent_id is not None:
             file_metadata["parents"] = [parent_id]
-        file = self.__service.files().create(supportsTeamDrives=True, body=file_metadata).encode('utf-8').execute()
+        file = self.__service.files().create(supportsTeamDrives=True, body=file_metadata).execute().encode('utf-8')
         file_id = file.get("id")
         if not IS_TEAM_DRIVE:
             self.__set_permission(file_id)
