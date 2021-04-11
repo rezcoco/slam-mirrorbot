@@ -408,7 +408,7 @@ class GoogleDriveHelper:
            retry=retry_if_exception_type(HttpError), before=before_log(LOGGER, logging.DEBUG))
     def create_directory(self, directory_name, parent_id):
         str_name = directory_name
-        str_encode = str_name.encode(encoding='utf8')
+        str_encode = str_name.encode('utf8')
         str_decode = str_encode.decode('utf8', 'strict')
         file_metadata = {
             "name": directory_name,
