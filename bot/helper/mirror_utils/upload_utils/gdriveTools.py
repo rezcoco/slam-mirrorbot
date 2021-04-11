@@ -1,5 +1,4 @@
 # coding: utf8
-# decode()
 import os
 import pickle
 import urllib.parse as urlparse
