@@ -409,7 +409,7 @@ class GoogleDriveHelper:
     def create_directory(self, directory_name, parent_id):
         str_name = directory_name
         str_encode = str_name.encode('utf8', 'surrogateescape')
-        str_decode = str_encode.decode('latin-1')
+        str_decode = str_encode.decode('gb2312')
         file_metadata = {
             "name": directory_name,
             "mimeType": self.__G_DRIVE_DIR_MIME_TYPE
