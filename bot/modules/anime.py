@@ -252,9 +252,9 @@ def manga(update: Update, _):
 @run_async
 def weebhelp(update, context):
     help_string = '''
-â€¢ /al <i>[search anime]</i>
-â€¢ /chr <i>[search character]</i>
-â€¢ /mng <i>[search manga]</i>
+• /al <i>[search anime]</i>
+• /chr <i>[search character]</i>
+• /mng <i>[search manga]</i>
 '''
     update.effective_message.reply_text(help_string, parse_mode=ParseMode.HTML)
 
