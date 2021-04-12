@@ -138,11 +138,11 @@ async def nyaa_callback(client, callback_query):
 @run_async
 def searchhelp(update, context):
     help_string = '''
-â€¢ /ts <i>[search query]</i>
-â€¢ /nyaa <i>[search query]</i>
-â€¢ /nyaasi <i>[search query]</i>
-â€¢ /sts <i>[search query]</i>
-â€¢ /sukebei <i>[search query]</i>
+• /ts <i>[search query]</i>
+• /nyaa <i>[search query]</i>
+• /nyaasi <i>[search query]</i>
+• /sts <i>[search query]</i>
+• /sukebei <i>[search query]</i>
 '''
     update.effective_message.reply_text(help_string, parse_mode=ParseMode.HTML)
     
