@@ -22,5 +22,6 @@ class _BotCommands:
         self.DeleteCommand = 'del'
         self.UsageCommand = 'usage'
         self.RepoCommand = 'repo'
+        self.FindCommand = 'find'
 
 BotCommands = _BotCommands()
