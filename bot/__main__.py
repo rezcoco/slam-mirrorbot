@@ -65,10 +65,11 @@ def find(update, context) -> None:
             link = item.get('link')
             name = item.get('name')
             pic = item.get('picture')
-            update.message.reply_text(f"""
-             *➲Name:* `{name}`
-             *➲Link:* `{link}`
-             """, parse_mode=ParseMode.MARKDOWN)
+            msg = f"""
+                  *➲Name:* `{name}`
+                  *➲Link:* `{link}`
+                  """
+        update.message.reply_text(msg, parse_mode=ParseMode.MARKDOWN)
         update.message.reply_text("End of Results")
     except:
         update.message.reply_text("""Search Completed""")
