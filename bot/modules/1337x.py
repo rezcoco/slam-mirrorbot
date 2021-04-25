@@ -8,19 +8,6 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 app = Client("trntsrcbot", api_id=int(os.environ.get("TELEGRAM_API")), api_hash=os.environ.get("TELEGRAM_HASH"), bot_token=os.environ.get("BOT_TOKEN"))
 
 
-print("\nBot Started\n")
-
-
-@app.on_message(filters.command(['start']))
-async def start(_, message):
-    await message.reply_text("Hello I'm 1337x Torrent Scraper Bot\nSend /help To Show Help Screen\nBot by @unkusr")
-
-
-
-@app.on_message(filters.command(['help']))
-async def help(_, message):
-    await message.reply_text("Example: /find titanic")
-
 m = None
 i = 0
 a = None
