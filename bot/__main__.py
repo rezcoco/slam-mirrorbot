@@ -52,28 +52,6 @@ Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
     update.effective_message.reply_text(start_string, parse_mode=ParseMode.MARKDOWN)
 
-#CommandHandler to get torrents for the query
-@run_async
-def find(update, context):
-    try:
-        update.message.reply_text("Searching results for 👉{}👈".format(update.message.text))
-        #1337x, torrent9 & eztv api
-        url = "https://src.abirxo.com/index.php?name={}&x1337=true&x1337pages=1".format(update.message.text)
-        results = requests.get(url).json()
-        print(results)
-        for item in results:
-            link = item.get('link')
-            name = item.get('name')
-            pic = item.get('picture')
-            msg = f"""
-                  *➲Name:* `{name}`
-                  *➲Link:* `{link}`
-                  """
-            update.message.reply_text(msg, parse_mode=ParseMode.MARKDOWN)
-
-        update.message.reply_text("End of Results")
-    except:
-        update.message.reply_text("""Search Completed""")
 
 @run_async
 def repo(update, context):
