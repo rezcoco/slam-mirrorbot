@@ -5,7 +5,7 @@ from pyrogram import Client, filters, emoji
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 
-app = Client("trntsrcbot", api_id=int(os.environ.get("API_ID")), api_hash=os.environ.get("API_HASH"), bot_token=os.environ.get("BOT_TOKEN"))
+app = Client("trntsrcbot", api_id=int(os.environ.get("TELEGRAM_ID")), api_hash=os.environ.get("TELEGRAM_HASH"), bot_token=os.environ.get("BOT_TOKEN"))
 
 
 print("\nBot Started\n")
