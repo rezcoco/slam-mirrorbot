@@ -149,8 +149,7 @@ def main():
     log_handler = CommandHandler(BotCommands.LogCommand, log, filters=CustomFilters.owner_filter)
     repo_handler = CommandHandler(BotCommands.RepoCommand, repo,
                                    filters=CustomFilters.authorized_chat | CustomFilters.authorized_user)
-    find_handler = CommandHandler(BotCommands.FindCommand, find,
-                                   filters=CustomFilters.authorized_chat | CustomFilters.authorized_user)
+    
     dispatcher.add_handler(start_handler)
     dispatcher.add_handler(ping_handler)
     dispatcher.add_handler(restart_handler)
@@ -158,7 +157,6 @@ def main():
     dispatcher.add_handler(stats_handler)
     dispatcher.add_handler(log_handler)
     dispatcher.add_handler(repo_handler)
-    dispatcher.add_handler(find_handler)
     updater.start_polling()
     LOGGER.info("Bot Started!")
     signal.signal(signal.SIGINT, fs_utils.exit_clean_up)
