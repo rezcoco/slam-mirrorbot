@@ -22,18 +22,6 @@ logger = logging.getLogger(__name__)
 
 TOKEN = "Your Token Here"
 
-#CommandHandler for message "Start"
-def start(update: Update, context: CallbackContext) -> None:
-    update.message.reply_text(f"""*Hi {update.effective_chat.first_name},* 
-Welcome to the Torrent Searcher Bot. Here you will find all the torrents you search for :)
-Type /help to know how to use the bot
-Type /info to know about the developer""", parse_mode=ParseMode.MARKDOWN)
-
-#CommandHandler for message "Help"
-def help(update: Update, context: CallbackContext) -> None:
-    update.message.reply_text("""Send me the query you want to search and i will do the rest!
-If any error occurs, feel free to pm me on https://t.me/unkusr""", parse_mode=ParseMode.MARKDOWN)
-
 
 #CommandHandler to get torrents for the query
 def find(update: Update, context: CallbackContext) -> None:
@@ -66,18 +54,11 @@ Watch Time {time}
     except:
         update.message.reply_text("""Search Completed""")
 
-#CommandHnadler for message "info"
-def info(update: Update, context: CallbackContext) -> None:
-    #Never Mind :-)
-    update.message.reply_text("""Bot by @unkusr""", parse_mode=ParseMode.MARKDOWN)
 
 #Add all handlers to the main function.
 def main() -> None:
     updater = Updater(TOKEN, use_context=True)
     dispatcher = updater.dispatcher
-    dispatcher.add_handler(CommandHandler("start", start))
-    dispatcher.add_handler(CommandHandler("help", help))
-    dispatcher.add_handler(CommandHandler("info", info))
     dispatcher.add_handler(MessageHandler(Filters.text & (~Filters.command), find))
     updater.start_polling() #set bot to polling, if you use webhooks, replace this statement with the url of webhook.,
     updater.idle()
