@@ -69,7 +69,8 @@ def find(update, context) -> None:
                   *➲Name:* `{name}`
                   *➲Link:* `{link}`
                   """
-        update.message.reply_text(msg, parse_mode=ParseMode.MARKDOWN)
+            update.message.reply_text(msg, parse_mode=ParseMode.MARKDOWN)
+
         update.message.reply_text("End of Results")
     except:
         update.message.reply_text("""Search Completed""")
