@@ -54,7 +54,7 @@ Type /{BotCommands.HelpCommand} to get a list of available commands
 
 #CommandHandler to get torrents for the query
 @run_async
-def find(update, context) -> None:
+def find(update, context):
     try:
         update.message.reply_text("Searching results for 👉{}👈".format(update.message.text))
         #1337x, torrent9 & eztv api
