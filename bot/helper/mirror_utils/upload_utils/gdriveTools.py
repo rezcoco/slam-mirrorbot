@@ -561,7 +561,6 @@ class GoogleDriveHelper:
                                                         author_url='https://github.com/rezcoco/slam-mirrorbot',
                                                         html_content=content
                                                         )['path'])
-Rez
             self.num_of_path = len(self.path)
             if self.num_of_path > 1:
                 self.edit_telegraph()
