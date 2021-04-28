@@ -19,7 +19,6 @@ from bot.helper.telegram_helper.bot_commands import BotCommands
 from bot.helper.telegram_helper.filters import CustomFilters
 from bot.helper.telegram_helper.message_utils import *
 from bot.helper.telegram_helper import button_build
-from bot.helper.mirror_utils.download_utils.mega_download import MegaDownloader
 import urllib
 import pathlib
 import os
