@@ -47,7 +47,7 @@ def stats(update, context):
 @run_async
 def start(update, context):
     start_string = f'''
-Hi {update.message.chat.first_name}, This bot can mirror all your links to Google drive!
+Hi {update.message.chat.first_name}, This bot can mirror all your links to Google Drive!
 Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
     update.effective_message.reply_text(start_string, parse_mode=ParseMode.MARKDOWN)
