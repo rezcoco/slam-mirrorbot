@@ -252,16 +252,16 @@ def manga(update: Update, _):
 @run_async
 def weebhelp(update, context):
     help_string = '''
-• /al <i>[search anime]</i>
-• /chr <i>[search character]</i>
-• /mng <i>[search manga]</i>
+• /anime <i>[search anime]</i>
+• /char <i>[search character]</i>
+• /manga <i>[search manga]</i>
 '''
     update.effective_message.reply_text(help_string, parse_mode=ParseMode.HTML)
 
 
-ANIME_HANDLER = CommandHandler("al", anime)
-CHARACTER_HANDLER = CommandHandler("chr", character)
-MANGA_HANDLER = CommandHandler("mng", manga)
+ANIME_HANDLER = CommandHandler("anime", anime)
+CHARACTER_HANDLER = CommandHandler("char", character)
+MANGA_HANDLER = CommandHandler("manga", manga)
 WEEBHELP_HANDLER = CommandHandler("weebhelp", weebhelp)
 
 dispatcher.add_handler(ANIME_HANDLER)
