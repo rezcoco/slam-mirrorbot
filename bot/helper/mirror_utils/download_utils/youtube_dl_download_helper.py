@@ -102,7 +102,7 @@ class YoutubeDLHelper(DownloadHelper):
         self.__listener.onDownloadError(error)
 
     def extractMetaData(self, link, qual, name):
-        if "hotstar" or "sonyliv" in link:
+        if 'hotstar' or 'sonyliv' in link:
             self.opts['geo_bypass_country'] = 'IN'
 
         with YoutubeDL(self.opts) as ydl:
@@ -126,7 +126,7 @@ class YoutubeDLHelper(DownloadHelper):
                 if v and v.get('filesize'):
                     self.size += float(v['filesize'])
             # For playlists, ydl.prepare-filename returns the following format: <Playlist Name>-<Id of playlist>.NA
-            self.name = name
+            self.name = name.split(f"-{result['id']}")[0]
             self.vid_id = video.get('id')
             self.is_playlist = True
         else:
