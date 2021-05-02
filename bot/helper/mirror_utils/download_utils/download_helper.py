@@ -1,6 +1,5 @@
 # An abstract class which will be inherited by the tool specific classes like aria2_helper or mega_download_helper
 import threading
-from bot.helper.ext_utils.bot_utils import get_readable_file_size
 
 
 class MethodNotImplementedError(NotImplementedError):
@@ -10,11 +9,11 @@ class MethodNotImplementedError(NotImplementedError):
 
 class DownloadHelper:
     def __init__(self):
-        self.name = ''  # Name of the download; empty string if no download has been started
-        self.size = 0.0  # Size of the download 
+        self._name = ''  # Name of the download; empty string if no download has been started
+        self._size = 0.0  # Size of the download
         self.downloaded_bytes = 0.0  # Bytes downloaded
         self.speed = 0.0  # Download speed in bytes per second
-        self.progress = 0.0 
+        self.progress = 0.0
         self.progress_string = '0.00%'
         self.eta = 0  # Estimated time of download complete
         self.eta_string = '0s'  # A listener class which have event callbacks
