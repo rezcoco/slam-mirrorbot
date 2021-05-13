@@ -200,5 +200,5 @@ if not calculate is None:
     for k, v in calculate.items():
         print(f'{k.title()}:', v)
 
-COUNT = CommandHandler("count", gdrive_checker)
-dispatcher.add_handler(COUNT)
+COUNT_HANDLER = CommandHandler("count", gdrive_checker)
+dispatcher.add_handler(COUNT_HANDLER)
