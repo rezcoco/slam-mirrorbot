@@ -187,10 +187,10 @@ credentials = service_account.Credentials.from_service_account_file('some_servic
 service =  build('drive', 'v3', credentials=credentials, cache_discovery=False)
 """
 
-LINKorID = input("Paste your GoogleDrive file/folder's link/fileId : ")
+# LINKorID = input("Paste your GoogleDrive file/folder's link/fileId : ")
 
-calculator = GoogleDriveSizeCalculate()  #(service)   ##Complete building service and then pass it
-calculate = calculator.gdrive_checker(LINKorID)
+# calculator = GoogleDriveSizeCalculate()  #(service)   ##Complete building service and then pass it
+# calculate = calculator.gdrive_checker(LINKorID)
 
 
 # Note that, gdrive folder size calculating speed depends on how many files inside a folder.
