@@ -46,7 +46,8 @@ class GoogleDriveSizeCalculate:
             return res.group(5)
         parsed = urlparse.urlparse(link)
         return parse_qs(parsed.query)['id'][0]
-
+    
+    @run_async
     def gdrive_checker(self, LINKorID):
         if self.__service is None:
             return
